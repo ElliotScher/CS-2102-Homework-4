@@ -36,7 +36,7 @@ public class Examples {
                 new BTNode<>(2, empty, empty)),
             new BTNode<>(4, empty, empty)
         );
-
+    
     @Test
     public void testAdd6OK() {
         ValidatorMaxHeap<Integer> maxHValid = new ValidatorMaxHeap<>();
@@ -49,5 +49,9 @@ public class Examples {
         assertTrue(maxHValid.validRemove(exMaxHeap, 5, afterRemove5));
     }
 
-    
+    @Test
+    public void testAdd6NotOK() {
+        ValidatorMaxHeap<Integer> maxHValid = new ValidatorMaxHeap<>();
+        assertFalse(maxHValid.validAdd(exMaxHeap, 5, exMaxHeap));
+    }
 }
